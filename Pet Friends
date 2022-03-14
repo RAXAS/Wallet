@@ -5,20 +5,21 @@ class Wallet:
         self.payment = payment
         self.cost = cost
 
-    def getName(self):
-        return self.name
+wallets = [
+    {
+        "name": "Дмитрий",
+        "surname": "Бык",
+        "payment": "руб.",
+        "cost": 100,
+    },
+    {
+        "name": "Анастасия",
+        "surname": "Заворуева",
+        "payment": "руб.",
+        "cost": 101,
+    },
+    ]
 
-    def getSurname(self):
-        return self.surname
-
-    def getPayment(self):
-        return self.payment
-
-    def getCost(self):
-        return self.cost
-
-buyer1 = Wallet("Дмитрий", "Бык", "руб.", 100)
-buyer2 = Wallet("Анастасия", "Заворуева", "руб.", 101)
-
-print(f'Клиент "{buyer1.name} {buyer1.surname}". Баланс: {buyer1.cost} {buyer1.payment}')
-print(f'Клиент "{buyer2.name} {buyer2.surname}". Баланс: {buyer2.cost} {buyer2.payment}')
+for wallet in wallets:
+    wallet_obj = Wallet(name=wallet.get("name"), surname=wallet.get("surname"), payment=wallet.get("payment"), cost=wallet.get("cost"))
+    print(f'Клиент:"{wallet_obj.name} {wallet_obj.surname}". Баланс: {wallet_obj.cost} {wallet_obj.payment}')
