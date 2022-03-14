@@ -18,5 +18,7 @@ class Wallet:
         return self.cost
 
 buyer1 = Wallet("Дмитрий", "Бык", "руб.", 100)
+buyer2 = Wallet("Анастасия", "Заворуева", "руб.", 101)
 
 print(f'Клиент "{buyer1.name} {buyer1.surname}". Баланс: {buyer1.cost} {buyer1.payment}')
+print(f'Клиент "{buyer2.name} {buyer2.surname}". Баланс: {buyer2.cost} {buyer2.payment}')
