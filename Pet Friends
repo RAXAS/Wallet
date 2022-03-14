@@ -8,7 +8,7 @@ class Wallet:
     def balance(self):
         return self.payment - self.expenses
         
-    def str(self):
+    def __str__(self):
         return f'Клиент "{self.name} {self.surname}". Баланс: {self.balance()} руб.'
 clients = [
     {
