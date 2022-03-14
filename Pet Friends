@@ -2,8 +2,8 @@ class Wallet:
     def __init__(self, name, surname, payment, expenses):
         self.name = name
         self.surname = surname
-        self.payment = payment
-        self.expenses = expenses
+        self.payment = sum(payment)
+        self.expenses = sum(expenses)
     
     def balance(self):
         return self.payment - self.expenses
@@ -29,4 +29,3 @@ clients = [
 for client in clients:
     wallet_obj = Wallet(client["name"], client["surname"], client["payment"], client["expenses"])
     print(wallet_obj)
-
