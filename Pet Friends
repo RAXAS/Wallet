@@ -1,0 +1,22 @@
+class Wallet:
+    def __init__(self, name, surname, payment, cost):
+        self.name = name
+        self.surname = surname
+        self.payment = payment
+        self.cost = cost
+
+    def getName(self):
+        return self.name
+
+    def getSurname(self):
+        return self.surname
+
+    def getPayment(self):
+        return self.payment
+
+    def getCost(self):
+        return self.cost
+
+buyer1 = Wallet("Дмитрий", "Бык", "руб.", 100)
+
+print(f'Клиент "{buyer1.name} {buyer1.surname}". Баланс: {buyer1.cost} {buyer1.payment}')
