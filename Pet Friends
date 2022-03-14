@@ -1,25 +1,32 @@
 class Wallet:
-    def __init__(self, name, surname, payment, cost):
+    def __init__(self, name, surname, payment, expenses):
         self.name = name
         self.surname = surname
         self.payment = payment
-        self.cost = cost
-
-wallets = [
+        self.expenses = expenses
+    
+    def balance(self):
+        return self.payment - self.expenses
+        
+    def str(self):
+        return f'Клиент "{self.name} {self.surname}". Баланс: {self.balance()} руб.'
+clients = [
     {
         "name": "Дмитрий",
         "surname": "Бык",
-        "payment": "руб.",
-        "cost": 100,
+        "payment": {52, 62, 82},
+        "expenses": {7, 13, 42},
     },
     {
         "name": "Анастасия",
         "surname": "Заворуева",
-        "payment": "руб.",
-        "cost": 101,
+        "payment": {220, 45, 62},
+        "expenses": {35, 100, 78},
     },
     ]
+    
+    
+for client in clients:
+    wallet_obj = Wallet(client["name"], client["surname"], client["payment"], client["expenses"])
+    print(wallet_obj)
 
-for wallet in wallets:
-    wallet_obj = Wallet(name=wallet.get("name"), surname=wallet.get("surname"), payment=wallet.get("payment"), cost=wallet.get("cost"))
-    print(f'Клиент:"{wallet_obj.name} {wallet_obj.surname}". Баланс: {wallet_obj.cost} {wallet_obj.payment}')
